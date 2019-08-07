@@ -31,7 +31,16 @@ e.preventDefault();
 }
 
 document.querySelector('style').innerHTML += `
-	div {
+body {
+        font-family: 'Open Sans', sans-serif;
+        background: linear-gradient(45deg, hsl(0, 5%, 10%), hsl(0, 13%, 11%));
+        color: #eee;
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+}
+div {
         position:  absolute;
         top: 50%;
         left: 50%;
@@ -41,7 +50,7 @@ document.querySelector('style').innerHTML += `
         background: linear-gradient(-45deg, hsla(280, 69%, 14%, 0.62), hsla(150, 69%, 8%, 0.75));
         border-radius: 6pt;
         box-shadow: 0 0 5pt 0 hsla(0, 0%, 0%, 0.57);
-	}
+}
 `;
 
 const render = ele => div.prepend(ele);
