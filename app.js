@@ -25,9 +25,9 @@ e.preventDefault();
         interview = document.querySelector('form input[name="interviewPrep"]').value;
         calcTime(hours, htCommit, dtCommit, interview);
 
-	document.querySelectorAll('span value')[0].innerText = `${htCommit > 1 ? `${htCommit} hours` : `${htCommit} hour`}.`;
-	document.querySelectorAll('span value')[1].innerText = `${dtCommit > 1 ? `${dtCommit} days` : `${dtCommit} day`}.`;
-	document.querySelectorAll('span value')[2].innerText = `${interview > 1 ? `${interview} hours` : `${interview} hour`}.`;
+	document.querySelectorAll('span value')[0].innerText = `${htCommit > 1 ? `${htCommit} hours` : `${htCommit} hour`} per day.`;
+	document.querySelectorAll('span value')[1].innerText = `${dtCommit > 1 ? `${dtCommit} days` : `${dtCommit} day`} per week.`;
+	document.querySelectorAll('span value')[2].innerText = `${interview > 1 ? `${interview} hours` : `${interview} hour`} of interview prep.`;
 }
 
 document.querySelector('style').innerHTML += `
@@ -77,11 +77,11 @@ form.innerHTML = `
   </select>
   
   <h3>How many hours can you commit per day?</h3>
-  <span><input type="range" name="hoursPerDay" min="1" max="18" value="6"><value>6 hours.</value></span>
+  <span><input type="range" name="hoursPerDay" min="1" max="18" value="6"><value>6 hours per day.</value></span>
   <h3>How many days can you commit per week?</h3>
-  <span><input type="range" name="daysPerWeek" min="1" max="7" value="5"><value>5 days.</value></span>
+  <span><input type="range" name="daysPerWeek" min="1" max="7" value="5"><value>5 days per week.</value></span>
   <h3>How many hours of interview practice do you want to calculate?</h3>
-  <span><input type="range" name="interviewPrep" min="1" max="3500" value="900"><value>900 hours.</value></span>
+  <span><input type="range" name="interviewPrep" min="1" max="3500" value="900"><value>900 hours of interview prep.</value></span>
   <button type="submit">Calculate</button>
 `;
 
