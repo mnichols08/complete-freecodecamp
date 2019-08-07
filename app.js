@@ -41,8 +41,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-};
-
+}
 div {
     position:  absolute;
     top: 50%;
