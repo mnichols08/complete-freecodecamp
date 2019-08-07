@@ -1,7 +1,8 @@
 (function(){
 
-function calcTime(courseLength, hoursPerDay, daysPerWeek, interviewPrep){
-	const allHours = parseInt(interviewPrep + courseLength);
+function calcTime(courseLength, hoursPerDay, daysPerWeek){
+	const allHours = courseLength;
+	console.log(allHours);
 	this.time = (allHours / hoursPerDay) + ((allHours / hoursPerDay) / daysPerWeek);
 	this.date = new Date(new Date().setDate(new Date().getDate() + this.time));
 	document.querySelector('h1').innerText = `You should finish by ${this.date}`;
@@ -16,7 +17,7 @@ e.preventDefault();
         htCommit = document.querySelector('form input[name="hoursPerDay"]').value,
         dtCommit = document.querySelector('form input[name="daysPerWeek"]').value,
         interview = document.querySelector('form input[name="interviewPrep"]').value;
-        calcTime(hours, htCommit, dtCommit, interview);
+        calcTime(parseInt(hours + interview), htCommit, dtCommit);
 }
 
 const body = ele => document.body.append(ele);
@@ -54,6 +55,7 @@ form.innerHTML = `
 `;
 
 document.querySelector('form button').addEventListener('click', getTime);
+document.querySelector('form select').addEventListener('input', getTime);
 document.querySelectorAll('form input').forEach(e => e.addEventListener('input', getTime));
 
 })()
