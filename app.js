@@ -4,7 +4,7 @@ const calcTime = (courseLength, hoursPerDay, daysPerWeek, interviewPrep) => {
 	const calcHours = parseInt(interviewPrep) + courseLength,
 		  calcTime = calcHours / hoursPerDay + (calcHours / hoursPerDay) / daysPerWeek,
 		  calcDate = new Date(new Date().setDate(new Date().getDate() + calcTime)),
-		  calcYears = (calcTime / 365) < 2 ? `within the next two years from now!` : `more than ${(calcTime / 365).toFixed()} years from now!`,
+		  calcYears = (calcTime / 365) < 729 ? `within the next two years from now!` : `more than ${(calcTime / 365).toFixed()} years from now!`,
 		  calcMonths = (calcTime / 365 * 12) < 1 ? `less than a month from now!` : `only ${(calcTime / 365 * 12).toFixed()} months from now!`,
 		  calcMoYr = (calcTime / 365 ) >= 1 ? calcYears : calcMonths;
 	h1.innerText = `You should finish by ${calcDate.toString().slice(0,15)}`;
@@ -26,8 +26,10 @@ e.preventDefault();
         htCommit = document.querySelector('form input[name="hoursPerDay"]').value,
         dtCommit = document.querySelector('form input[name="daysPerWeek"]').value,
         interview = document.querySelector('form input[name="interviewPrep"]').value,
-	values = document.querySelectorAll('span value');
-        calcTime(hours, htCommit, dtCommit, interview);
+		values = document.querySelectorAll('span value'),
+		button = document.querySelector('form button');
+	button ? button.parentNode.removeChild(button) : null;
+    calcTime(hours, htCommit, dtCommit, interview);
 	
 	values[0].innerText = `${courses > 1 ? `${courses} Units` : `${courses} Unit`}.`;
 	values[1].innerText = `${htCommit > 1 ? `${htCommit} hours` : `${htCommit} hour`} per day.`;
