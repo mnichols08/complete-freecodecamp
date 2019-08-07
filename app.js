@@ -1,10 +1,10 @@
 (function(){
 
 function calcTime(courseLength, hoursPerDay, daysPerWeek, interviewPrep){
-	const allHours = parseInt(interviewPrep) + courseLength;
-	this.time = allHours / hoursPerDay + (allHours / hoursPerDay) / daysPerWeek;
-	this.date = new Date(new Date().setDate(new Date().getDate() + this.time));
-	document.querySelector('h1').innerText = `You should finish by ${this.date.toString().slice(0,16)}`;
+	const calcHours = parseInt(interviewPrep) + courseLength,
+		  calcTime = calcHours / hoursPerDay + (calcHours / hoursPerDay) / daysPerWeek,
+		  calcDate = new Date(new Date().setDate(new Date().getDate() + calcTime));
+	document.querySelector('h1').innerText = `You should finish by ${calcDate.toString().slice(0,16)}`;
 
 };
 
@@ -46,7 +46,7 @@ form.innerHTML = `
   <h3>How many days can you commit per week?</h3>
   <input type="range" name="daysPerWeek" min="1" max="7" value="4">
 
-  <h3>How many hours of interviews practice do you want to calculate?</h3>
+  <h3>How many hours of interview practice do you want to calculate?</h3>
   <input type="range" name="interviewPrep" min="0" max="2500" value="0">
 
   <button type="submit">Calculate</button>
