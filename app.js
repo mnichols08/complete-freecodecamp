@@ -66,7 +66,7 @@ render(h1);
 
 h1.innerText = `Calculate Time to Complete Free Code Camp`;
 form.innerHTML = `
-  <h3>Number of Courses To Complete</h3>
+  <h3>Number of Units To Complete</h3>
   <select>
   <option value="6">6</option>
   <option value="5">5</option>
