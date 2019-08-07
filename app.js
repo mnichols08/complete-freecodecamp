@@ -4,9 +4,9 @@ const calcTime = (courseLength, hoursPerDay, daysPerWeek, interviewPrep) => {
 	const calcHours = parseInt(interviewPrep) + courseLength,
 		  calcTime = calcHours / hoursPerDay + (calcHours / hoursPerDay) / daysPerWeek,
 		  calcDate = new Date(new Date().setDate(new Date().getDate() + calcTime)),
-		  calcYears = (calcTime / 365) > 365 && (calcTime / 365) < 730 ? `within the next two years from now!` : `more than ${(calcTime / 365).toFixed()} years from now!`,
+		  calcYears = (calcTime / 365) < 2 ? `within the next two years from now!` : `more than ${(calcTime / 365).toFixed()} years from now!`,
 		  calcMonths = (calcTime / 365 * 12) < 1 ? `less than a month from now!` : `only ${(calcTime / 365 * 12).toFixed()} months from now!`,
-		  calcMoYr = calcTime / 365 * 12 > 12 ? calcYears : calcMonths;
+		  calcMoYr = (calcTime / 365 ) >= 1 ? calcYears : calcMonths;
 	h1.innerText = `You should finish by ${calcDate.toString().slice(0,15)}`;
 	;
 	p.innerText = `
