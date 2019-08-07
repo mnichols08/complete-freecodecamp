@@ -72,11 +72,16 @@ const div = document.createElement('div');
 const p = document.createElement('p');
 const form = document.createElement('form');
 const h1 = document.createElement('h1');
+const a = document.createElement('a');
+a.href = 'https://github.com/mnichols08/complete-freecodecamp/blob/master/app.js';
+a.innerText = 'View Source';
 
 document.body.prepend(div);
+render(a);
 render(form);
 render(p);
 render(h1);
+
 
 h1.innerText = `Calculate Time to Complete Free Code Camp`;
 form.innerHTML = `
@@ -102,10 +107,6 @@ form.innerHTML = `
   <button type="submit">Calculate</button>
 `;
 
-div.innerHTML += `
-<br />
-<a href="https://github.com/mnichols08/complete-freecodecamp/blob/master/app.js" target="_blank">View Source</a>
-`
 
 document.querySelector('form button').addEventListener('click', getTime);
 document.querySelector('form select').addEventListener('input', getTime);
