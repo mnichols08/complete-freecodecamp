@@ -19,7 +19,7 @@ document.querySelector('form').innerHTML = `
   <input type="range" name="daysPerWeek" min="1" max="7" value="7">
 
   <h3>How many hours of interviews practice do you want to calculate?</h3>
-  <input type="range" name="interviewPrep" min="0" max="2500" value="0">
+  <input type="range" name="interviewPrep" min="0" max="2500" value="1">
 
   <button type="submit">Calculate</button>
 `;
@@ -37,5 +37,5 @@ function calcTime(courseLength, hoursPerDay, daysPerWeek, interviewPrep){
 	this.time = (courseLength / hoursPerDay) + ((courseLength / hoursPerDay) / daysPerWeek);
 	this.date = new Date(new Date().setDate(new Date().getDate() + this.time));
 	document.querySelector('h1').innerText = `You should finish by ${this.date}`;
-	
+	console.log({'actual days to complete': this.time, 'hours of study': courseLength, 'days per week': daysPerWeek, 'hours for interview prep': interviewPrep});
 };
