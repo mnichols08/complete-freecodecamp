@@ -79,7 +79,7 @@ form.innerHTML = `
   <h3>How many hours can you commit per day?</h3>
   <span><input type="range" name="hoursPerDay" min="1" max="18" value="6"><value>6 hours.</value></span>
   <h3>How many days can you commit per week?</h3>
-  <span><input type="range" name="daysPerWeek" min="1" max="7" value="5"><value>1 day.</value></span>
+  <span><input type="range" name="daysPerWeek" min="1" max="7" value="5"><value>5 days.</value></span>
   <h3>How many hours of interview practice do you want to calculate?</h3>
   <span><input type="range" name="interviewPrep" min="1" max="3500" value="900"><value>900 hours.</value></span>
   <button type="submit">Calculate</button>
