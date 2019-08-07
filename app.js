@@ -35,7 +35,6 @@ body {
         font-family: 'Open Sans', sans-serif;
         background: linear-gradient(45deg, hsl(0, 5%, 10%), hsl(0, 13%, 11%));
         color: #eee;
-        width: 50%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
