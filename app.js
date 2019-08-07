@@ -22,13 +22,14 @@ e.preventDefault();
         hours = courses * 300,
         htCommit = document.querySelector('form input[name="hoursPerDay"]').value,
         dtCommit = document.querySelector('form input[name="daysPerWeek"]').value,
-        interview = document.querySelector('form input[name="interviewPrep"]').value;
+        interview = document.querySelector('form input[name="interviewPrep"]').value,
+	values = document.querySelectorAll('span value');
         calcTime(hours, htCommit, dtCommit, interview);
 	
-	document.querySelectorAll('span value')[0].innerText = `${courses > 1 ? `${courses} Units` : `${courses} Unit`}.`;
-	document.querySelectorAll('span value')[1].innerText = `${htCommit > 1 ? `${htCommit} hours` : `${htCommit} hour`} per day.`;
-	document.querySelectorAll('span value')[2].innerText = `${dtCommit > 1 ? `${dtCommit} days` : `${dtCommit} day`} per week.`;
-	document.querySelectorAll('span value')[3].innerText = `${interview > 1 ? `${interview} hours` : `${interview} hour` } of interview prep.`;
+	values[0].innerText = `${courses > 1 ? `${courses} Units` : `${courses} Unit`}.`;
+	values[1].innerText = `${htCommit > 1 ? `${htCommit} hours` : `${htCommit} hour`} per day.`;
+	values[2].innerText = `${dtCommit > 1 ? `${dtCommit} days` : `${dtCommit} day`} per week.`;
+	values[3].innerText = `${interview !== 1 ? `${interview} hours` : `${interview} hour` } of interview prep.`;
 }
 
 document.head.append(document.createElement('style'));
