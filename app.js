@@ -11,7 +11,7 @@ const calcTime = (courseLength, hoursPerDay, daysPerWeek, interviewPrep) => {
 	;
 	p.innerText = `
 Each unit in freeCodeCamp is approximately 300 hours. 
-If you signed up for ${courseLength / 300 > 1 ? `${courseLength / 300} units` : `${courseLength / 300} unit`} and you devote ${interviewPrep > 0 ? `${interviewPrep > 1 ? `${interviewPrep} hours` : `${interviewPrep} hour`}
+If you signed up for ${courseLength / 300 > 1 ? `${courseLength / 300} units` : `${courseLength / 300} unit`} ${interviewPrep > 0 ? `${interviewPrep > 1 ? `and you devote ${interviewPrep} hours` : `and you devote just ${interviewPrep} hour`}
 to your interview prep` : `` }, it will take you a total of ${calcHours} hours. 
 Assuming that you were to spend ${hoursPerDay > 1 ? `${hoursPerDay} hours` : `${hoursPerDay} hour`} per day for ${daysPerWeek > 1 ? `${daysPerWeek} days` : `${daysPerWeek} day`} each week,
 You would be finished in as soon as ${calcTime > 1 ? `${calcTime.toFixed()} days` : `${calcTime.toFixed()} day`}! 
