@@ -24,10 +24,11 @@ e.preventDefault();
         dtCommit = document.querySelector('form input[name="daysPerWeek"]').value,
         interview = document.querySelector('form input[name="interviewPrep"]').value;
         calcTime(hours, htCommit, dtCommit, interview);
-
-	document.querySelectorAll('span value')[0].innerText = `${htCommit > 1 ? `${htCommit} hours` : `${htCommit} hour`} per day.`;
-	document.querySelectorAll('span value')[1].innerText = `${dtCommit > 1 ? `${dtCommit} days` : `${dtCommit} day`} per week.`;
-	document.querySelectorAll('span value')[2].innerText = `${interview > 1 ? `${interview} hours` : `${interview} hour` } of interview prep.`;
+	
+	document.querySelectorAll('span value')[0].innerText = `${courses > 1 ? `${courses} Units` : `${courses} Unit`}.`;
+	document.querySelectorAll('span value')[1].innerText = `${htCommit > 1 ? `${htCommit} hours` : `${htCommit} hour`} per day.`;
+	document.querySelectorAll('span value')[2].innerText = `${dtCommit > 1 ? `${dtCommit} days` : `${dtCommit} day`} per week.`;
+	document.querySelectorAll('span value')[3].innerText = `${interview > 1 ? `${interview} hours` : `${interview} hour` } of interview prep.`;
 }
 
 document.head.append(document.createElement('style'));
@@ -72,6 +73,7 @@ render(h1);
 h1.innerText = `Calculate Time to Complete Free Code Camp`;
 form.innerHTML = `
   <h3>Number of Units To Complete</h3>
+  <span>
   <select>
   <option value="6">6</option>
   <option value="5">5</option>
@@ -80,6 +82,8 @@ form.innerHTML = `
   <option value="2">2</option>
   <option value="1">1</option>
   </select>
+  <value>3 Units.</value>
+  </span>
   
   <h3>How many hours can you commit per day?</h3>
   <span><input type="range" name="hoursPerDay" min="1" max="18" value="6"><value>6 hours per day.</value></span>
