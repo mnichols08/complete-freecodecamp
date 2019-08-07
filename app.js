@@ -30,6 +30,7 @@ e.preventDefault();
 	document.querySelectorAll('span value')[2].innerText = `${interview > 1 ? `${interview} hours` : `${interview} hour` } of interview prep.`;
 }
 
+document.head.append(document.createElement('style'));
 document.querySelector('style').innerHTML += `
 body {
         font-family: 'Open Sans', sans-serif;
