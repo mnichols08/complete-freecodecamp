@@ -41,6 +41,14 @@ body {
         flex-wrap: wrap;
         justify-content: center;
 }
+a {
+	color: #ccc;
+	text-decoration: none;
+}
+a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
 div {
         padding: 2.5%;
         margin: 2.5%;
@@ -93,6 +101,10 @@ form.innerHTML = `
   <span><input type="range" name="interviewPrep" min="0" max="3500" value="900"><value>900 hours of interview prep.</value></span>
   <button type="submit">Calculate</button>
 `;
+
+div.innerHTML += `
+<a href="https://github.com/mnichols08/complete-freecodecamp" target="_blank">View Source</a>
+`
 
 document.querySelector('form button').addEventListener('click', getTime);
 document.querySelector('form select').addEventListener('input', getTime);
