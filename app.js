@@ -29,7 +29,7 @@ e.preventDefault();
 	values[0].innerText = `${courses > 1 ? `${courses} Units` : `${courses} Unit`}.`;
 	values[1].innerText = `${htCommit > 1 ? `${htCommit} hours` : `${htCommit} hour`} per day.`;
 	values[2].innerText = `${dtCommit > 1 ? `${dtCommit} days` : `${dtCommit} day`} per week.`;
-	values[3].innerText = `${interview !== 1 ? `${interview} hours` : `${interview} hour` } of interview prep.`;
+	values[3].innerText = `${interview > 1 || interview < 1 ? `${interview} hours` : `${interview} hour` } of interview prep.`;
 }
 
 document.head.append(document.createElement('style'));
