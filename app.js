@@ -3,16 +3,19 @@
 const calcTime = (courseLength, hoursPerDay, daysPerWeek, interviewPrep) => {
 	const calcHours = parseInt(interviewPrep) + courseLength,
 		  calcTime = calcHours / hoursPerDay + (calcHours / hoursPerDay) / daysPerWeek,
-		  calcDate = new Date(new Date().setDate(new Date().getDate() + calcTime));
+		  calcDate = new Date(new Date().setDate(new Date().getDate() + calcTime)),
+		  calcYears = (calcTime / 365) > 365 && (calcTime / 365) < 730 ? `within the next two years from now!` : `more than ${(calcTime / 365).toFixed()} years from now!`,
+		  calcMonths = (calcTime / 365 * 12) < 1 ? `less than a month from now!` : `only ${(calcTime / 365 * 12).toFixed()} months from now!`,
+		  calcMoYr = calcTime / 365 * 12 > 12 ? calcYears : calcMonths;
 	h1.innerText = `You should finish by ${calcDate.toString().slice(0,15)}`;
 	;
 	p.innerText = `
 Each unit in freeCodeCamp is approximately 300 hours. 
-If you signed up for ${courseLength / 300 > 1 ? `${courseLength / 300} units` : `${courseLength / 300} unit`} and you devote at least 
-${interviewPrep > 1 ? `${interviewPrep} hours` : `${interviewPrep} hour`} to your interview prep, it will take you a total of ${calcHours} hours. 
+If you signed up for ${courseLength / 300 > 1 ? `${courseLength / 300} units` : `${courseLength / 300} unit`} and you devote ${interviewPrep > 0 ? `${interviewPrep > 1 ? `${interviewPrep} hours` : `${interviewPrep} hour`}
+to your interview prep` : `` }, it will take you a total of ${calcHours} hours. 
 Assuming that you were to spend ${hoursPerDay > 1 ? `${hoursPerDay} hours` : `${hoursPerDay} hour`} per day for ${daysPerWeek > 1 ? `${daysPerWeek} days` : `${daysPerWeek} day`} each week,
 You would be finished in as soon as ${calcTime > 1 ? `${calcTime.toFixed()} days` : `${calcTime.toFixed()} day`}! 
-Guess what?! That is ${calcTime > 365 ? `only ${(calcTime / 365).toFixed()} years from now!` : `less than ${(calcTime / 365 * 12).toFixed()} months from now!`}
+Guess what?! That is ${calcMoYr}
 `;
 };
 
