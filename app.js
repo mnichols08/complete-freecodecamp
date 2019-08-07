@@ -103,7 +103,8 @@ form.innerHTML = `
 `;
 
 div.innerHTML += `
-<a href="https://github.com/mnichols08/complete-freecodecamp" target="_blank">View Source</a>
+<br />
+<a href="https://github.com/mnichols08/complete-freecodecamp/blob/master/app.js" target="_blank">View Source</a>
 `
 
 document.querySelector('form button').addEventListener('click', getTime);
