@@ -1,15 +1,15 @@
 (function(){
 
 const calcTime = (courseLength, hoursPerDay, daysPerWeek, interviewPrep) => {
-	const calcHours = parseInt(interviewPrep) + courseLength,
-		  calcTime = calcHours / hoursPerDay + (calcHours / hoursPerDay) / daysPerWeek,
-		  calcDate = new Date(new Date().setDate(new Date().getDate() + calcTime)),
-		  calcYears = (calcTime / 365) < 729 ? `within the next two years from now!` : `more than ${(calcTime / 365).toFixed()} years from now!`,
-		  calcMonths = (calcTime / 365 * 12) < 1 ? `less than a month from now!` : `only ${(calcTime / 365 * 12).toFixed()} months from now!`,
-		  calcMoYr = (calcTime / 365 ) >= 1 ? calcYears : calcMonths;
-	h1.innerText = `You should finish by ${calcDate.toString().slice(0,15)}`;
-	;
-	p.innerText = `
+const calcHours = parseInt(interviewPrep) + courseLength,
+	calcTime = calcHours / hoursPerDay + (calcHours / hoursPerDay) / daysPerWeek,
+	calcDate = new Date(new Date().setDate(new Date().getDate() + calcTime)),
+	calcYears = (calcTime / 365) < 729 ? `within the next two years from now!` : `more than ${(calcTime / 365).toFixed()} years from now!`,
+	calcMonths = (calcTime / 365 * 12) < 1 ? `less than a month from now!` : `only ${(calcTime / 365 * 12).toFixed()} months from now!`,
+	calcMoYr = (calcTime / 365 ) >= 1 ? calcYears : calcMonths;
+
+h1.innerText = `You should finish by ${calcDate.toString().slice(0,15)}`;
+p.innerText = `
 Each unit in freeCodeCamp is approximately 300 hours. 
 If you signed up for ${courseLength / 300 > 1 ? `${courseLength / 300} units` : `${courseLength / 300} unit`} ${interviewPrep > 0 ? `${interviewPrep > 1 ? `and you devote ${interviewPrep} hours` : `and you devote just ${interviewPrep} hour`}
 to your interview prep` : `` }, it will take you a total of ${calcHours} hours. 
@@ -26,9 +26,9 @@ e.preventDefault();
         htCommit = document.querySelector('form input[name="hoursPerDay"]').value,
         dtCommit = document.querySelector('form input[name="daysPerWeek"]').value,
         interview = document.querySelector('form input[name="interviewPrep"]').value,
-		values = document.querySelectorAll('span value'),
-		button = document.querySelector('form button');
-	button ? button.parentNode.removeChild(button) : null;
+	values = document.querySelectorAll('span value'),
+	button = document.querySelector('form button');
+	button ? button.parentNode.removeChild(button) : null; // removes submit button after first calculation
     calcTime(hours, htCommit, dtCommit, interview);
 	
 	values[0].innerText = `${courses > 1 ? `${courses} Units` : `${courses} Unit`}.`;
@@ -38,7 +38,7 @@ e.preventDefault();
 }
 
 document.head.append(document.createElement('style'));
-document.querySelector('style').innerHTML += `
+document.querySelector('style').innerHTML = `
 body {
         font-family: 'Open Sans', sans-serif;
         background: linear-gradient(45deg, hsl(0, 5%, 10%), hsl(0, 13%, 11%));
