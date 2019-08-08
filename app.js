@@ -29,6 +29,7 @@ e.preventDefault();
 	values = document.querySelectorAll('span value'),
 	button = document.querySelector('form button');
 	button ? button.parentNode.removeChild(button) : null; // removes submit button after first calculation
+	
     calcTime(hours, htCommit, dtCommit, interview);
 	
 	values[0].innerText = `${courses > 1 ? `${courses} Units` : `${courses} Unit`}.`;
