@@ -1,5 +1,4 @@
 (function(){
-
 const calcTime = (courseLength, hoursPerDay, daysPerWeek, interviewPrep) => {
 const calcHours = parseInt(interviewPrep) + courseLength,
 	calcTime = calcHours / hoursPerDay + (calcHours / hoursPerDay) / daysPerWeek,
